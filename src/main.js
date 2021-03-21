@@ -19,7 +19,7 @@ ctx.translate(xOffset, yOffset);
 ctx.globalAlpha = 1
 
 // Setup scene
-const room = Room(0, 0, 700, 500);
+const room = Room(0, 0, 1800, 1200);
 
 const walls = makeSegments([
     [20, 20, 20, 120],
@@ -35,6 +35,8 @@ const blocks = makeBlocks([
     [50, 150, 20, 20],
     [400, 400, 40, 40],
     [350, 200, 140, 140],
+    [800, 800, 140, 140],
+    [1000, 200, 140, 140],
 ]);
 
 const run = (lightSource) => {

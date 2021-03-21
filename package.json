@@ -29,5 +29,8 @@
     "babel-preset-stage-3": "^6.3.13",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0"
+  },
+  "dependencies": {
+    "eslint": "^7.22.0"
   }
 }

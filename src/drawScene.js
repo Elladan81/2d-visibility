@@ -21,7 +21,7 @@ const drawSegment =
 const drawVisibilityTriangles =
     (ctx, color, lightSource, visibilityOutput) => {
         ctx.save();
-        ctx.fillStyle = 'rgba(255,255,255,1)';
+        ctx.fillStyle = 'white'
         for (let i = 0; i < visibilityOutput.length; i += 1) {
             let [p1, p2] = visibilityOutput[i];
             ctx.beginPath();
@@ -29,6 +29,7 @@ const drawVisibilityTriangles =
             ctx.lineTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
             ctx.closePath()
+            ctx.globalCompositeOperation = "destination-out";
             ctx.fill();
         }
         ctx.restore();
@@ -40,5 +41,5 @@ export const drawScene =
         drawRectangle(ctx, 'black', room);
         blocks.forEach(drawRectangle.bind(null, ctx, 'black'));
         walls.forEach(drawSegment.bind(null, ctx, 'black'));
-        drawVisibilityTriangles(ctx, 'gray', lightSource, visibilityOutput);
+        drawVisibilityTriangles(ctx, 'white', lightSource, visibilityOutput);
     };
